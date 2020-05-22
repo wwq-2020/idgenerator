@@ -1,0 +1,13 @@
+[server]
+port = 10951
+ip = "127.0.0.1"
+
+[kv]
+endpoints = ["127.0.0.1:2379"]
+election_key_fmt = "/service/idgenerator_strict/election/%s"
+cur_id_key_fmt = "/service/idgenerator_strict/kv/curid/%s"
+lease_ttl = 1
+to_election_key_prefix = "/service/idgenerator_strict/to_election"
+
+
+

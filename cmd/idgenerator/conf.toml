@@ -1,0 +1,7 @@
+[server]
+port = 10945
+
+[kv]
+endpoints = ["127.0.0.1:2379"]
+leader_key_fmt = "/service/idgenerator_strict/election/%s"
+cur_id_key_fmt = "/service/idgenerator/kv/trend/%s/curid"
