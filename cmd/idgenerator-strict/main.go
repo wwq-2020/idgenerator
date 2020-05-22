@@ -34,6 +34,7 @@ func main() {
 	idManagerFactory := idmanager.CreateFactory(true)
 	idFetcherFactory := idfetcher.CreateFactory(conf.KV, etcd, true)
 	leadershipmanager := leadershipmanager.New(conf.KV, etcd, leadershipFactory, true)
+	go leadershipmanager.ToElection()
 	partitionFactory := partition.CreateFactory(idFetcherFactory, idManagerFactory, leadershipmanager)
 	partitionmanager := partitionmanager.New(partitionFactory)
 	svc := service.New(partitionmanager)
